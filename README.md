@@ -1,3 +1,3 @@
 # daylightMachineController
-This project is a remote machine controller software for Windows.
-This project is designed for Windows OS tablet PC.
+Remote machine controller software.
+Designed for Windows tablet and desktop.
