@@ -10,7 +10,7 @@ using System.Windows;
 namespace DayLightMachineController
 {
     /// <summary>
-    /// App.xaml etkileşim mantığı
+    /// Interaction logic for App.xaml
     /// </summary>
     public partial class App : Application
     {

@@ -19,7 +19,7 @@ using DayLightMachineController.View.MainWindowPages;
 namespace DayLightMachineController.View
 {
     /// <summary>
-    /// SplashWindow.xaml etkileşim mantığı
+    /// Interaction logic for SplashWindow.xaml
     /// </summary>
     public partial class SplashWindow : Window
     {

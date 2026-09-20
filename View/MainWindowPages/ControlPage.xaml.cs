@@ -17,7 +17,7 @@ using System.Windows.Forms;
 namespace DayLightMachineController.View.MainWindowPages
 {
     /// <summary>
-    /// ControlPage.xaml etkileşim mantığı
+    /// Interaction logic for ControlPage.xaml
     /// </summary>
     public partial class ControlPage : Page
     {

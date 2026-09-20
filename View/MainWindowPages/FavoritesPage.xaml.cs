@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace DayLightMachineController.View.MainWindowPages
 {
     /// <summary>
-    /// FavoritesPage.xaml etkileşim mantığı
+    /// Interaction logic for FavoritesPage.xaml
     /// </summary>
     public partial class FavoritesPage : Page
     {

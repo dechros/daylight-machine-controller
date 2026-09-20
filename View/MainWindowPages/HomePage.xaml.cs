@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace DayLightMachineController.View.MainWindowPages
 {
     /// <summary>
-    /// HomePage.xaml etkileşim mantığı
+    /// Interaction logic for HomePage.xaml
     /// </summary>
     public partial class HomePage : Page
     {
