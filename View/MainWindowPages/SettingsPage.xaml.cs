@@ -48,10 +48,22 @@ namespace DayLightMachineController.View.MainWindowPages
 
         private void TopGrid_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            UnclickAllTopButtons();
+            Grid clickedButton = (Grid)sender;
             SetRandomValuesToSliders();
 
-            Grid clickedButton = (Grid)sender;
+            if (clickedButton.Name == "SaveButtonGrid")
+            {
+                ClickSaveButton();
+                return;
+            }
+            else if (clickedButton.Name == "ResetButtonGrid")
+            {
+                ClickResetButton();
+                return;
+            }
+
+            UnclickAllTopButtons();
+
             if (clickedButton.Name == "LeftTrackButtonGrid")
             {
                 ClickLeftTrackButton();
@@ -96,6 +108,16 @@ namespace DayLightMachineController.View.MainWindowPages
             RightTopSliderLabel.Content = "Information Data Interval";
             RightMidSliderLabel.Content = "Engine RPM Filter Strength";
             RightBottomSliderLabel.Content = "Lost Connection Interval";
+        }
+
+        private void ClickSaveButton()
+        {
+
+        }
+
+        private void ClickResetButton()
+        {
+
         }
 
         private void ClickLeftTrackButton()
@@ -208,6 +230,8 @@ namespace DayLightMachineController.View.MainWindowPages
             }
 
             LeftTopSliderForeground.Width = newPosiitonForForeground;
+
+            LeftTopPercentageLabel.Content = (int)GetValueFromLeftTopSlider() + " / 100";
         }
 
         private void SetValueForLeftTopSlider(int percentage)
@@ -217,6 +241,8 @@ namespace DayLightMachineController.View.MainWindowPages
                 Console.WriteLine("  ## SetValueForLeftTopSlider percentage is out of bounds.");
                 return;
             }
+
+            LeftTopPercentageLabel.Content = percentage + " / 100";
 
             double newMarginForBall = (percentage * 9.2) - 460;
 
@@ -305,6 +331,8 @@ namespace DayLightMachineController.View.MainWindowPages
             }
 
             LeftMidSliderForeground.Width = newPosiitonForForeground;
+
+            LeftMidPercentageLabel.Content = (int)GetValueFromLeftMidSlider() + " / 100";
         }
 
         private void SetValueForLeftMidSlider(int percentage)
@@ -314,6 +342,8 @@ namespace DayLightMachineController.View.MainWindowPages
                 Console.WriteLine("  ## SetValueForLeftMidSlider percentage is out of bounds.");
                 return;
             }
+
+            LeftMidPercentageLabel.Content = percentage + " / 100";
 
             double newMarginForBall = (percentage * 9.2) - 460;
 
@@ -402,6 +432,8 @@ namespace DayLightMachineController.View.MainWindowPages
             }
 
             LeftBottomSliderForeground.Width = newPosiitonForForeground;
+
+            LeftBottomPercentageLabel.Content = (int)GetValueFromLeftBottomSlider() + " / 100";
         }
 
         private void SetValueForLeftBottomSlider(int percentage)
@@ -411,6 +443,8 @@ namespace DayLightMachineController.View.MainWindowPages
                 Console.WriteLine("  ## SetValueForLeftBottomSlider percentage is out of bounds.");
                 return;
             }
+
+            LeftBottomPercentageLabel.Content = percentage + " / 100";
 
             double newMarginForBall = (percentage * 9.2) - 460;
 
@@ -474,7 +508,7 @@ namespace DayLightMachineController.View.MainWindowPages
 
             Point position = e.GetPosition(this);
 
-            double newMarginForBall = (position.X - 900) * 2;
+            double newMarginForBall = (position.X - 885) * 2;
 
             if (newMarginForBall < -460)
             {
@@ -487,7 +521,7 @@ namespace DayLightMachineController.View.MainWindowPages
 
             RightTopParameterTouchBall.Margin = new Thickness(newMarginForBall, 0, 0, 0);
 
-            double newPosiitonForForeground = position.X - 645;
+            double newPosiitonForForeground = position.X - 640;
 
             if (newPosiitonForForeground < 0)
             {
@@ -499,6 +533,8 @@ namespace DayLightMachineController.View.MainWindowPages
             }
 
             RightTopSliderForeground.Width = newPosiitonForForeground;
+
+            RightTopPercentageLabel.Content = (int)GetValueFromRightTopSlider() + " / 100";
         }
 
         private void SetValueForRightTopSlider(int percentage)
@@ -508,6 +544,8 @@ namespace DayLightMachineController.View.MainWindowPages
                 Console.WriteLine("  ## SetValueForRightTopSlider percentage is out of bounds.");
                 return;
             }
+
+            RightTopPercentageLabel.Content = percentage + " / 100";
 
             double newMarginForBall = (percentage * 9.2) - 460;
 
@@ -571,7 +609,7 @@ namespace DayLightMachineController.View.MainWindowPages
 
             Point position = e.GetPosition(this);
 
-            double newMarginForBall = (position.X - 900) * 2;
+            double newMarginForBall = (position.X - 885) * 2;
 
             if (newMarginForBall < -460)
             {
@@ -584,7 +622,7 @@ namespace DayLightMachineController.View.MainWindowPages
 
             RightMidParameterTouchBall.Margin = new Thickness(newMarginForBall, 0, 0, 0);
 
-            double newPosiitonForForeground = position.X - 645;
+            double newPosiitonForForeground = position.X - 640;
 
             if (newPosiitonForForeground < 0)
             {
@@ -596,6 +634,8 @@ namespace DayLightMachineController.View.MainWindowPages
             }
 
             RightMidSliderForeground.Width = newPosiitonForForeground;
+
+            RightMidPercentageLabel.Content = (int)GetValueFromRightMidSlider() + " / 100";
         }
 
         private void SetValueForRightMidSlider(int percentage)
@@ -605,6 +645,8 @@ namespace DayLightMachineController.View.MainWindowPages
                 Console.WriteLine("  ## SetValueForRightMidSlider percentage is out of bounds.");
                 return;
             }
+
+            RightMidPercentageLabel.Content = percentage + " / 100";
 
             double newMarginForBall = (percentage * 9.2) - 460;
 
@@ -668,7 +710,7 @@ namespace DayLightMachineController.View.MainWindowPages
 
             Point position = e.GetPosition(this);
 
-            double newMarginForBall = (position.X - 900) * 2;
+            double newMarginForBall = (position.X - 885) * 2;
 
             if (newMarginForBall < -460)
             {
@@ -681,7 +723,7 @@ namespace DayLightMachineController.View.MainWindowPages
 
             RightBottomParameterTouchBall.Margin = new Thickness(newMarginForBall, 0, 0, 0);
 
-            double newPosiitonForForeground = position.X - 645;
+            double newPosiitonForForeground = position.X - 640;
 
             if (newPosiitonForForeground < 0)
             {
@@ -693,6 +735,8 @@ namespace DayLightMachineController.View.MainWindowPages
             }
 
             RightBottomSliderForeground.Width = newPosiitonForForeground;
+
+            RightBottomPercentageLabel.Content = (int)GetValueFromRightBottomSlider() + " / 100";
         }
 
         private void SetValueForRightBottomSlider(int percentage)
@@ -702,6 +746,8 @@ namespace DayLightMachineController.View.MainWindowPages
                 Console.WriteLine("  ## SetValueForRightBottomSlider percentage is out of bounds.");
                 return;
             }
+
+            RightBottomPercentageLabel.Content = percentage + " / 100";
 
             double newMarginForBall = (percentage * 9.2) - 460;
 
@@ -753,7 +799,5 @@ namespace DayLightMachineController.View.MainWindowPages
             Console.WriteLine(GetValueFromRightBottomSlider());
             /* For Demo */
         }
-
-        
     }
 }
